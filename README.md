@@ -9,6 +9,7 @@ Next.js ships with [API routes](https://github.com/vercel/next.js#api-routes), w
 ## Getting started
 - Run `yarn install`
 - Run `yarn dev` to run dev mode
+- Open `localhost:3000` to see the running pp
 
 ### Dependencies:
 - Bootstrap: UI library
@@ -17,6 +18,28 @@ Next.js ships with [API routes](https://github.com/vercel/next.js#api-routes), w
 ### Dev dependencies
 - Jest
 - Babel: For transpiling JS to TS for jest
+
+
+### Endpoints
+#### POST `/api/solutions`
+
+RequestBody:
+```
+{
+ a: 3,
+ b: 5,
+ c: 4,
+}
+```
+
+Succesfull Response in ([JSON:API Spec](https://jsonapi.org/)): 
+```
+{ 
+  type: 'solution
+
+}
+
+```
 
 
 ### TODOS:

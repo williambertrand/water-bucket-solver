@@ -1,4 +1,4 @@
-import { SolutionApiObject } from "../../interfaces";
+import { SolutionApiObject } from "../interfaces";
 
 export const fetchSolution = async (body): Promise<SolutionApiObject> => {
   const response = await fetch('/api/solutions', {

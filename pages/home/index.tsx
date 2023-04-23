@@ -7,7 +7,7 @@ import type { Solution, SolutionParams } from '../../interfaces'
 import { useState } from 'react'
 import Header from '../../components/Header'
 import { BucketForm } from '../../components/BucketForm';
-import { fetchSolution } from './_requests';
+import { fetchSolution } from '../../requests/solutions';
 import SolutionContent from '../../components/Solution/SolutionContent';
 
 export default function Index() {
