@@ -1,5 +1,8 @@
-import React, { FC, HTMLAttributes } from 'react'
+import React, { FC } from 'react'
 import { motion } from 'framer-motion'
+
+const MIN_BUCKET_HEIGHT = 50
+const MAX_BUCKET_HEIGHT = 200
 
 interface BucketVisualProps {
   fill: number
@@ -24,8 +27,7 @@ const styleForState = (fill: number, total: number, bucketHeight: number): any =
 
 export const BucketVisual: FC<BucketVisualProps> = ({ name, fill, total, max }) => {
 
-  const maxHeight = 200
-  const bucketHeight = (total / max) * maxHeight 
+  const bucketHeight = Math.max((total / max) * MAX_BUCKET_HEIGHT, MIN_BUCKET_HEIGHT)
 
   return (
     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center', width: '20%', minWidth: '120px'}}>

@@ -11,7 +11,7 @@ import { fetchSolution } from '../../requests/solutions';
 import SolutionContent from '../../components/Solution/SolutionTable';
 import SolutionVisualizer from '../../components/Solution/SolutionVisulizer';
 
-export default function Index() {
+export default function HomePage() {
 
   const [error, setError] = useState()
   const [loading, setLoading] = useState(false)

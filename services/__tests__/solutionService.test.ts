@@ -1,4 +1,4 @@
-import { createSolution, validateParams } from "../_solution.service"
+import { createSolution, validateParams } from "../solutionService"
 
 describe('_solutionService', () => {
   describe('validateParams', () => {
@@ -17,7 +17,16 @@ describe('_solutionService', () => {
         c: 7
       })
       expect(res.valid).toEqual(false)
-      expect(res.message).toEqual('C Bucket cannot be odd if the other two buckets are even.')
+      expect(res.message).toEqual('Bucket C cannot be odd if the other two buckets are even.')
+    })
+    test('includes message for unsolvable params', () => {
+      const res = validateParams({
+        a: 3,
+        b: 6,
+        c: 2
+      })
+      expect(res.valid).toEqual(false)
+      expect(res.message).toEqual('Bucket C cannot be solved for with those parameters.')
     })
   })
 

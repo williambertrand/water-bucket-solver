@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { ErrorApiObject, SolutionApiObject } from '../../../interfaces'
-import { createSolution, validateParams } from './_solution.service'
+import { createSolution, validateParams } from '../../../services/solutionService'
 
 export default function solutionHandler(
   req: NextApiRequest,

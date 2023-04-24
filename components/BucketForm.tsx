@@ -32,6 +32,7 @@ export const BucketForm = ({
             <Form.Control
               type="number"
               placeholder="Param A"
+              role='input'
               value={bucketState.a.toString()}
               onChange={(v) => updateBucketState({ a: Number(v.target.value) })}
             />
@@ -42,6 +43,7 @@ export const BucketForm = ({
             <Form.Label>Bucket B Size</Form.Label>
             <Form.Control
               type="number"
+              role='input'
               placeholder="Param B"
               value={bucketState.b.toString()}
               onChange={(v) => updateBucketState({ b: Number(v.target.value) })}
@@ -50,9 +52,10 @@ export const BucketForm = ({
         </Col>
         <Col sm={6} md={4}>
           <Form.Group className="mb-3" controlId="bucketA">
-            <Form.Label>Bucket C Size</Form.Label>
+            <Form.Label>Desired Amount (C)</Form.Label>
             <Form.Control
               type="number"
+              role='input'
               placeholder="Param C"
               value={bucketState.c.toString()}
               onChange={(v) => updateBucketState({ c: Number(v.target.value) })}
