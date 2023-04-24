@@ -15,8 +15,8 @@ import { BucketVisual } from './BucketVisual'
  * @param callback function to call at ech tick
  * @param delay : ms to delay between each call
  */
-function useInterval(callback, delay) {
-  const savedCallback = useRef();
+function useInterval(callback: () => void, delay: number) {
+  const savedCallback = useRef<any>();
 
   useEffect(() => {
     savedCallback.current = callback;
@@ -24,7 +24,9 @@ function useInterval(callback, delay) {
 
   useEffect(() => {
     function tick() {
-      savedCallback.current();
+      if(savedCallback && savedCallback.current) {
+        savedCallback.current();
+      }
     }
     if (delay !== null) {
       let id = setInterval(tick, delay);
@@ -51,10 +53,12 @@ const SolutionVisualizer: FC<SolutionProps> = ({
 
 
   const onReStart = () => {
-    setTick(0)
+    setTick(-2)
   }
 
-  const currentStep = solution.steps[tick]
+  const currentStep = solution.steps[Math.max(tick, 0)]
+
+  const largerBucket = Math.max(solution.params.a, solution.params.b)
 
   return (
     <Container>
@@ -62,8 +66,8 @@ const SolutionVisualizer: FC<SolutionProps> = ({
       <p>Step: {currentStep.display}</p>
       
       <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
-        <BucketVisual name="Bucket A" fill={currentStep.state.a} total={solution.params.a} />
-        <BucketVisual name="Bucket B" fill={currentStep.state.b} total={solution.params.b} />
+        <BucketVisual name="Bucket A" fill={currentStep.state.a} total={solution.params.a} max={largerBucket} />
+        <BucketVisual name="Bucket B" fill={currentStep.state.b} total={solution.params.b} max={largerBucket} />
       </div>
 
       <Button variant="secondary" onClick={onReStart}>Re-Start</Button>
