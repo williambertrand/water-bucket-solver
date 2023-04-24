@@ -29,6 +29,7 @@ View it live: https://water-bucket-solver.vercel.app
 
 ## Project Structure
 - Next.js uses file based routing: all files under the `pages/` directory are mapped to a page.
+  - I added a rediect from `/ -> /home` as I find it a bit easier to use the `/Home/index` page as the root of the project rather than the `/index` file
 - All files under `/page/api` are mapped to api endpoints (see docs: [API routes](https://github.com/vercel/next.js#api-routes))
 - the `services` directory contains services used by the api
     - Unfortunately, this structure is required as adding `services` anywhere under the `pages/api` directory would result in the "service" file being mapped to an api endpoint. In the future, better organization could be worked out, but this is easy enough when starting with a small project like this.
