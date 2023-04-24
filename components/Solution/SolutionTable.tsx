@@ -6,19 +6,19 @@ import Container from 'react-bootstrap/Container'
 import SolutionStep from './SolutionStep'
 
 
-interface SolutionProps {
+export interface SolutionProps {
   solution?: Solution
 }
 
-const SolutionContent: FC<SolutionProps> = ({
+const SolutionTable: FC<SolutionProps> = ({
   solution
 }) => {
 
   if (!solution) return <></>
 
   return (
-    <Container>
-      <h4>Solution</h4>
+    <Container style={{marginTop: '24px'}}>
+      <h4>Solution Steps</h4>
       {/* Subtract one for our "Complete" step */}
       <p>This bucket problem can be solved in {solution.steps.length - 1} steps</p>
       <Table striped bordered hover>
@@ -34,7 +34,7 @@ const SolutionContent: FC<SolutionProps> = ({
           {
             solution.steps.map((step, idx) => {
               return (
-                <SolutionStep step={step} idx={idx} key={`step-${idx}`}/>
+                <SolutionStep step={step} key={`step-${idx}`}/>
               )
             })
           }
@@ -45,4 +45,4 @@ const SolutionContent: FC<SolutionProps> = ({
 
 }
 
-export default SolutionContent
+export default SolutionTable

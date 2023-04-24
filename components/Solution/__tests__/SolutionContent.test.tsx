@@ -1,6 +1,6 @@
 import React from 'react'
 import {render, screen} from '@testing-library/react'
-import SolutionContent from '../SolutionContent'
+import SolutionContent from '../SolutionTable'
 import { Solution } from '../../../interfaces'
 
 

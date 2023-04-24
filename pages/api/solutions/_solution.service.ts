@@ -113,7 +113,7 @@ export const createSolution = (params: SolutionParams): Solution  => {
     let bucket = a === c ? 'a' : 'b'
     steps.push({ type: 'FILL', display: `Fill bucket ${bucket}` })
     steps.push({ display: `Complete! You now have ${c} units of water in bucket ${bucket}`, type: 'COMPLETE' })
-    return { steps }
+    return { steps, params }
   }
 
   const bigToSmallSteps = getStepsForBigToSmall(params)
@@ -122,6 +122,7 @@ export const createSolution = (params: SolutionParams): Solution  => {
   const optimalSteps = bigToSmallSteps.length < smallToBigSteps.length ? bigToSmallSteps : smallToBigSteps
 
   return {
-    steps: optimalSteps
+    steps: optimalSteps,
+    params
   }
 }

@@ -8,7 +8,8 @@ import { useState } from 'react'
 import Header from '../../components/Header'
 import { BucketForm } from '../../components/BucketForm';
 import { fetchSolution } from '../../requests/solutions';
-import SolutionContent from '../../components/Solution/SolutionContent';
+import SolutionContent from '../../components/Solution/SolutionTable';
+import SolutionVisualizer from '../../components/Solution/SolutionVisulizer';
 
 export default function Index() {
 
@@ -35,12 +36,11 @@ export default function Index() {
     <>
       <Header />
       <div style={styles.page}>
-        <BucketForm onSubmit={handleSubmit}/>
-
+        <BucketForm onSubmit={handleSubmit} />
         <hr />
         {
           error && (
-            <Alert key={'error-alert'} variant='danger'>
+            <Alert key={"error-alert"} variant="danger">
               {error}
             </Alert>
           )
@@ -50,7 +50,8 @@ export default function Index() {
             <Spinner animation="border" role="status"></Spinner>
           )
         }
-        <SolutionContent solution={solution}/>
+        { solution && <SolutionVisualizer solution={solution} />}
+        <SolutionContent solution={solution} />
       </div>
     </>
   )
@@ -58,9 +59,9 @@ export default function Index() {
 
 const styles = {
   page: {
-    padding: '20px'
+    padding: "20px"
   },
   form: {
-    marginBottom: '20px',
+    marginBottom: "20px",
   }
 }

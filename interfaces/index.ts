@@ -20,6 +20,7 @@ export type Step = {
 
 export interface Solution {
   steps: Step[]
+  params: SolutionParams
 }
 
 export interface SolutionParams {
