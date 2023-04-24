@@ -35,8 +35,6 @@ export default function Index() {
     <>
       <Header />
       <div style={styles.page}>
-        <h3>Params:</h3>
-
         <BucketForm onSubmit={handleSubmit}/>
 
         <hr />

@@ -10,6 +10,11 @@ export interface ErrorApiObject {
 
 export type Step = {
   display: string
+  state: {
+    a: number,
+    b: number,
+    c?: number
+  }
   type: 'FILL' | 'TRANSFER' | 'EMPTY' | 'COMPLETE'
 }
 

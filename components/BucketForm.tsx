@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useCallback, useState } from 'react'
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -24,6 +24,7 @@ export const BucketForm = ({
 
   return (
     <Container>
+      <h4>Bucket Params</h4>
       <Row>
         <Col sm={6} md={4}>
         <Form.Group className="mb-3" controlId="bucketA">
@@ -31,7 +32,7 @@ export const BucketForm = ({
           <Form.Control
             type="number"
             placeholder="Param A" 
-            value={bucketState.a}
+            value={bucketState.a.toString()}
             onChange={(v) => updateBucketState({ a: Number(v.target.value) })}
           />
         </Form.Group>
@@ -42,7 +43,7 @@ export const BucketForm = ({
           <Form.Control
             type="number"
             placeholder="Param B" 
-            value={bucketState.b}
+            value={bucketState.b.toString()}
             onChange={(v) => updateBucketState({ b: Number(v.target.value) })}
           />
         </Form.Group>
@@ -53,7 +54,7 @@ export const BucketForm = ({
           <Form.Control
             type="number"
             placeholder="Param C" 
-            value={bucketState.c}
+            value={bucketState.c.toString()}
             onChange={(v) => updateBucketState({ c: Number(v.target.value) })}
           />
         </Form.Group>
