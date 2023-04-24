@@ -11,6 +11,10 @@ View it live: https://water-bucket-solver.vercel.app
 - Run `yarn dev` to run dev mode
 - Open `localhost:3000` to see the running pp
 
+
+## Deployments
+- Successful builds on `main` branch are automatically deployed to the Vercel [here](https://water-bucket-solver.vercel.app)
+
 ## Testing
 - run `yarn test` to run some very minimal component tests
 
