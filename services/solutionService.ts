@@ -30,8 +30,8 @@ const initsBuckets = ({ a, b }) => {
   return {
     bigBucketSize: Math.max(a, b),
     smallBucketSize: Math.min(a, b),
-    bigBucket: a > b ? 'A' : 'B',
-    smallBucket: a > b ? 'B' : 'A'
+    bigBucket: a > b ? 'a' : 'b',
+    smallBucket: a > b ? 'b' : 'a'
   }
 }
 
@@ -133,11 +133,11 @@ export const createSolution = (params: SolutionParams): Solution  => {
   const { a, b, c } = params
   const steps = []
 
-  // Quickly check for some easy solutions before trying the two patterns
+  // Quickly check for a easy solution before trying the two patterns
   if (a === c || b === c) {
-    let bucket = a === c ? 'A' : 'B'
-    steps.push({ type: 'FILL', display: `Fill Bucket ${bucket}` })
-    steps.push({ display: `Complete! You now have ${c} units of water in Bucket ${bucket}`, type: 'COMPLETE' })
+    let [bucket, other] = a === c ? ['a', 'b'] : ['b', 'a']
+    steps.push({ type: 'FILL', display: `Fill Bucket ${bucket}`, state: {[bucket]: c, [other]: 0 }})
+    steps.push({ display: `Complete! You now have ${c} units of water in Bucket ${bucket}`, type: 'COMPLETE', state: {[bucket]: c, [other]: 0, c } })
     return { steps, params }
   }
 
