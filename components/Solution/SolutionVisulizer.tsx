@@ -59,11 +59,14 @@ const SolutionVisualizer: FC<SolutionProps> = ({
   const currentStep = solution.steps[Math.max(tick, 0)]
 
   const largerBucket = Math.max(solution.params.a, solution.params.b)
+  const stepTitle = currentStep.type !== 'COMPLETE' 
+  ? `Step: ${currentStep.display}`
+  : currentStep.display
 
   return (
     <Container>
       <h4>Solution Visualization</h4>
-      <p>Step: {currentStep.display}</p>
+      <p style={{ fontSize: '18px', fontWeight: '500'}}>{stepTitle}</p>
       
       <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
         <BucketVisual name="Bucket A" fill={currentStep.state.a} total={solution.params.a} max={largerBucket} />
