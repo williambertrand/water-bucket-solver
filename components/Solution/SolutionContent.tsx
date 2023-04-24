@@ -33,9 +33,8 @@ const SolutionContent: FC<SolutionProps> = ({
         <tbody>
           {
             solution.steps.map((step, idx) => {
-
               return (
-                <SolutionStep step={step} key={idx} />
+                <SolutionStep step={step} idx={idx} key={`step-${idx}`}/>
               )
             })
           }

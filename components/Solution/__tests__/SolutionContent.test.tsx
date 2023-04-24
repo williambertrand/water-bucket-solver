@@ -6,9 +6,9 @@ import { Solution } from '../../../interfaces'
 
 const solution: Solution = { 
   steps: [
-    { display: 'Step 1, fill large bucket', type: 'FILL'},
-    { display: 'Step 2, trasnfer to small bucket', type: 'EMPTY'},
-    { display: 'Step 3, repeat...', type: 'COMPLETE'},
+    { display: 'Step 1, fill large bucket', type: 'FILL', state: {a: 0, b: 6 }},
+    { display: 'Step 2, trasnfer to small bucket', type: 'EMPTY', state: {a: 0, b: 2 } },
+    { display: 'Step 3, repeat...', type: 'COMPLETE', state: {a: 0, b: 5, c: 5}},
   ]
 }
 

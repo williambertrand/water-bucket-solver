@@ -2,9 +2,9 @@ import React, { FC } from "react"
 
 import { Step } from "../../interfaces"
 
-const SolutionStep: FC<{ step: Step, key: number }> = ({ step, key }) => {
+const SolutionStep: FC<{ step: Step }> = ({ step }) => {
   return (
-    <tr key={key}>
+    <tr>
       <td>{step.display}</td>
       <td>{step.state?.a}</td>
       <td>{step.state?.b}</td>
