@@ -14,8 +14,8 @@ const SolutionContent: FC<SolutionProps> = ({
   solution
 }) => {
 
-  if(!solution) return <></>
-  
+  if (!solution) return <></>
+
   return (
     <Container>
       <h4>Solution</h4>
@@ -31,14 +31,14 @@ const SolutionContent: FC<SolutionProps> = ({
           </tr>
         </thead>
         <tbody>
-        {
-          solution.steps.map((step, idx) => {
+          {
+            solution.steps.map((step, idx) => {
 
-            return (
-              <SolutionStep step={step} key={idx} />
-            )
-          })
-        }
+              return (
+                <SolutionStep step={step} key={idx} />
+              )
+            })
+          }
         </tbody>
       </Table>
     </Container>

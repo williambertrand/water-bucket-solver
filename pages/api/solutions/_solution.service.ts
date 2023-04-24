@@ -56,7 +56,7 @@ const getStepsForBigToSmall = (params: SolutionParams): Step[]  => {
     }
   }
 
-  steps.push({ display: `Complete! You now have ${c} units of water in bucket ${bigBucket}`, type: 'COMPLETE', state: {[bigBucket]: bigVal, [smallBucket]: smallVal, c } })
+  steps.push({ type: 'COMPLETE', display: `Complete! You now have ${c} units of water in bucket ${bigBucket}`, state: {[bigBucket]: bigVal, [smallBucket]: smallVal, c } })
 
   return steps
 }
@@ -98,7 +98,7 @@ const getStepsForSmallToBig = (params: SolutionParams): Step[]  => {
     }
   }
 
-  steps.push({ display: `Complete! You now have ${c} units of water in bucket ${bigBucket}`, type: 'COMPLETE', state: {[bigBucket]: bigVal, [smallBucket]: smallVal, c } })
+  steps.push({ type: 'COMPLETE', display: `Complete! You now have ${c} units of water in bucket ${bigBucket}`, state: {[bigBucket]: bigVal, [smallBucket]: smallVal, c } })
 
   return steps
 }

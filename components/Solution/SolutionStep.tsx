@@ -2,7 +2,7 @@ import React, { FC } from "react"
 
 import { Step } from "../../interfaces"
 
-const SolutionStep: FC<{step: Step, key: number}> = ({ step, key}) => {
+const SolutionStep: FC<{ step: Step, key: number }> = ({ step, key }) => {
   return (
     <tr key={key}>
       <td>{step.display}</td>
